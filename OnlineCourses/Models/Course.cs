@@ -15,7 +15,7 @@ namespace OnlineCourses.Models
         public string ShortDescription { get; set; }
         public string MainDescription { get; set; }
         public byte[] Image { get; set; }
-        public bool MonthCourse { get; set; }
+        public bool MonthCourse { get; set; }       
         public string Category { get; set; }
     }
 }

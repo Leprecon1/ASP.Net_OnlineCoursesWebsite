@@ -150,3 +150,6 @@ C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\zh-
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Course\AddCourse.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\AddTeacher.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\TopTeachers\Default.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PopularCourses\Default.cshtml.g.cs

@@ -10,6 +10,8 @@ namespace OnlineCourses.Models
         public int TeacherId { get; set; }
         public string Name { get; set; }
         public string About { get; set;}
-        public string Link { get; set; }
+        public string Specialization { get; set; }
+        public byte[] Photo { get; set; }
+        public bool TopTeacher { get; set; }
     }
 }
