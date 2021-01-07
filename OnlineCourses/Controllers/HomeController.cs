@@ -30,6 +30,7 @@ namespace OnlineCourses.Controllers
 
         public IActionResult Event()
         {
+
             return View();
         }
 

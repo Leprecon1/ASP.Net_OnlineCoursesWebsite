@@ -1,0 +1,35 @@
+﻿
+
+
+    <article class="row blog_item">
+        <div class="col-md-3">
+            <div class="blog_info text-right">
+                <div class="post_tag">
+                    @*<a href="#">Food,</a>*@
+                    <a class="active" href="#">@Model.Direction</a>
+                    @*<a href="#">Politics,</a>
+                        <a href="#">Lifestyle</a>*@
+                </div>
+                <ul class="blog_meta list">
+                    <li><a href="#">@Model.Location<i class="ti-user"></i></a></li>
+                    <li><a href="#">@Model.Date<i class="ti-calendar"></i></a></li>
+                    <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                    <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="blog_post">
+                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Image))" alt="">
+                <div class="blog_details">
+                    <a href="single-blog.html">
+                        <h2>@Model.Name</h2>
+                    </a>
+                    <p>
+                        @Model.ShortDescription
+                    </p>
+                    <a href="single-blog.html" class="blog_btn">View More</a>
+                </div>
+            </div>
+        </div>
+    </article>

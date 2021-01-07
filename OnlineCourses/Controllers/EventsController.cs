@@ -18,7 +18,27 @@ namespace OnlineCourses.Controllers
             this.db = db;
         }
 
-        [HttpGet]
+        public IActionResult Index(string? direction)
+        {
+            IEnumerable<Events> events;
+            if (string.IsNullOrEmpty(direction))
+            {
+                events = db.Events.Where(e => e.Availability == true);
+            }
+            else
+            {
+                events = db.Events.Where(e => e.Availability == true).Where(e => e.Direction == direction);
+            }
+
+            var AllEvents1 = new AllEventsViewModel
+            {
+                AllEvents = events
+            };
+
+            return View(AllEvents1);
+        }
+
+      [HttpGet]
         public IActionResult AddEvent()
         {
             return View();
@@ -50,5 +70,8 @@ namespace OnlineCourses.Controllers
             db.SaveChanges();
             return Redirect("/Home/Index");
         }
+
+
+
     }
 }
