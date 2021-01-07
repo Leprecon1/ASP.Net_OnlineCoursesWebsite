@@ -8,7 +8,7 @@
             <span class="price">$@group.Price</span>
             <span class="tag mb-4 d-inline-block">@group.Course.Category</span>
             <h4 class="mb-3">
-                <a href="course-details.html">@group.Course.Name</a>
+                <a asp-controller="Course" asp-action="CourseDetails" asp-route-id="@group.GroupId" >@group.Course.Name</a>
             </h4>
             <p>
                 @group.Course.ShortDescription

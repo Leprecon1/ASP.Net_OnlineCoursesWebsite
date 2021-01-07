@@ -6,6 +6,8 @@
     <title>@ViewData["Title"] - OnlineCourses</title>
 
     <link rel="stylesheet" href="~/css/bootstrap.css">
+
+
     <link rel="stylesheet" href="~/css/flaticon.css">
     <link rel="stylesheet" href="~/css/themify-icons.css">
     <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css">
@@ -51,11 +53,12 @@
                     <div class="collapse navbar-collapse offset"
                          id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home</a>
+                            <li class="nav-item" @*class="nav-item active"*@>
+
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about-us.html">About</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
                             </li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#"
@@ -76,22 +79,24 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item submenu dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Event">Event</a>
+                            </li>
+
+                             @*<li class="nav-item submenu dropdown">
                                 <a href="#"
                                    class="nav-link dropdown-toggle"
                                    data-toggle="dropdown"
                                    role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="false">Blog</a>
+                                   aria-expanded="false">Event</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="blog.html">Blog</a>
+                                        <a class="nav-link" ></a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="single-blog.html">Blog Details</a>
-                                    </li>
+
                                 </ul>
-                            </li>
+                            </li>*@
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Contact</a>
                             </li>
@@ -108,8 +113,8 @@
     </header>
 
 
-            @RenderBody()
-  
+    @RenderBody()
+
 
     <footer class="footer-area section_gap">
         <div class="container">
@@ -183,7 +188,7 @@
             <div class="row footer-bottom d-flex justify-content-between">
                 <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                
+
                 </p>
                 <div class="col-lg-4 col-sm-12 footer-social">
                     <a href="#"><i class="ti-facebook"></i></a>
@@ -194,6 +199,9 @@
             </div>
         </div>
     </footer>
+
+
+
 
     <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/js/popper.js"></script>

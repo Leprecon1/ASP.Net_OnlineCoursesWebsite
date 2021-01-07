@@ -153,3 +153,8 @@ C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Onl
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\AddTeacher.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\TopTeachers\Default.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PopularCourses\Default.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Course\CourseDetails.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Details.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Events\AddEvent.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event.cshtml.g.cs

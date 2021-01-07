@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OnlineCourses.Models;
 using OnlineCourses.ViewModels;
 using System;
@@ -16,6 +17,19 @@ namespace OnlineCourses.Controllers
         {
             this.db = db;
         }
+
+        public IActionResult CourseDetails(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound("Публикация не найдена");
+            }
+
+            Group group = db.Groups.Include(c => c.Course).Include(a => a.Teacher).Where(g => g.GroupId == id).First();
+            
+            return View(group);
+        }
+
 
         [HttpGet]
         public IActionResult AddCourse()
