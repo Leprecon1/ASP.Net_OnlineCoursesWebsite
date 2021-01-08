@@ -23,11 +23,11 @@ namespace OnlineCourses.Controllers
             IEnumerable<Events> events;
             if (string.IsNullOrEmpty(direction))
             {
-                events = db.Events.Where(e => e.Availability == true);
+                events = db.Events.Where(e => e.Availability == true).OrderBy(e => e.Date);
             }
             else
             {
-                events = db.Events.Where(e => e.Availability == true).Where(e => e.Direction == direction);
+                events = db.Events.Where(e => e.Availability == true).Where(e => e.Direction == direction).OrderBy(e => e.Date);
             }
 
             var AllEvents1 = new AllEventsViewModel
@@ -38,7 +38,20 @@ namespace OnlineCourses.Controllers
             return View(AllEvents1);
         }
 
-      [HttpGet]
+
+        public IActionResult EventDetails(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound("Публикация не найдена");
+            }
+
+            Events events = db.Events.Where(e => e.EventsId == id).First();
+
+            return View(events);
+        }
+
+        [HttpGet]
         public IActionResult AddEvent()
         {
             return View();

@@ -1,0 +1,30 @@
+﻿@foreach( var events in Model.AllEvents)
+{
+    <div class="col-lg-6 col-md-6">
+        <div class="single_event position-relative">
+            <div class="event_thumb">
+                <img width="550" height="400" src="data:image/jpeg;base64,@(Convert.ToBase64String(events.Image))" alt="" />
+            </div>
+            <div class="event_details">
+                <div class="d-flex mb-4">
+                    <div class="date"><span>@events.Date.Day</span>@events.Date.Month</div>
+
+                    <div class="time-location">
+                        <p>
+                            <span class="ti-time mr-2"></span> @events.Date.TimeOfDay
+                        </p>
+                        <p>
+                            <span class="ti-location-pin mr-2"></span> @events.Location
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    @events.ShortDescription
+                </p>
+                <a asp-controller="Events"  asp-action="EventDetails" 
+                       asp-route-id="@events.EventsId" class="primary-btn rounded-0 mt-3">View Details</a>
+            </div>
+        </div>
+    </div>
+}
+

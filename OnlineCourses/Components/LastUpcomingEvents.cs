@@ -8,19 +8,23 @@ using System.Threading.Tasks;
 
 namespace OnlineCourses.Components
 {
-    public class TopTeachers : ViewComponent
-    {
+    public class LastUpcomingEvents: ViewComponent 
+     {
         private readonly AppDbContext db;
 
-        public TopTeachers(AppDbContext db)
+        public LastUpcomingEvents(AppDbContext db)
         {
             this.db = db;
         }
 
         public IViewComponentResult Invoke()
         {
-            var TopTeachers = new TopTeachersModel { TopTeachers = db.Teachers.Where(x => x.TopTeacher == true).Take(4)};
-            return View(TopTeachers);
+            int numberOfEvents = 2;
+            var lastEvents = new AllEventsViewModel
+            {
+                AllEvents = db.Events.OrderBy(e => e.Date).Take(numberOfEvents).Where(e => e.Date > DateTime.Now)
+            };
+            return View(lastEvents);
         }
     }
 }

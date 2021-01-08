@@ -28,7 +28,8 @@
                     <p>
                         @Model.ShortDescription
                     </p>
-                    <a href="single-blog.html" class="blog_btn">View More</a>
+                    <a class="blog_btn" asp-controller="Events"  asp-action="EventDetails" 
+                       asp-route-id="@Model.EventsId">View More</a>
                 </div>
             </div>
         </div>
