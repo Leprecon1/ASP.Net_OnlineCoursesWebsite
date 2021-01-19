@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +28,14 @@ namespace OnlineCourses
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
-            services.AddControllersWithViews(); 
+
+            services.AddHttpContextAccessor();
+            services.AddSession();
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+        
+            services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +56,8 @@ namespace OnlineCourses
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();    
+            app.UseAuthorization();     
 
             app.UseEndpoints(endpoints =>
             {

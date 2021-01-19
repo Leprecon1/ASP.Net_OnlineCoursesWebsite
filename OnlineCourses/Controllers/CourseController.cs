@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineCourses.Models;
 using OnlineCourses.ViewModels;
@@ -30,12 +31,13 @@ namespace OnlineCourses.Controllers
             return View(group);
         }
 
-
         [HttpGet]
         public IActionResult AddCourse()
         {
             return View();
         }
+
+        [Authorize(Roles = "admin")]
 
         [HttpPost]
         public RedirectResult AddCourse(CourseViewModels crs)
@@ -64,5 +66,7 @@ namespace OnlineCourses.Controllers
             db.SaveChanges();
             return Redirect("/Home/Index");
         }
+
+      
     }
 }

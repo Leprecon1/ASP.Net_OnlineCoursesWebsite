@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineCourses.Models;
 using OnlineCourses.ViewModels;
 using System;
@@ -22,6 +23,7 @@ namespace OnlineCourses.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public RedirectResult AddTeacher(TeacherViewModels tvm)
         {

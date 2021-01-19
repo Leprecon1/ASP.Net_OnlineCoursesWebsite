@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineCourses.Models;
 using OnlineCourses.ViewModels;
@@ -51,6 +52,7 @@ namespace OnlineCourses.Controllers
             return View(events);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public IActionResult AddEvent()
         {
