@@ -8,7 +8,7 @@ namespace OnlineCourses.Models
     public class Teacher
     {
         public int TeacherId { get; set; }
-        public string Name { get; set; }
+        public string TeacherName { get; set; }
         public string About { get; set;}
         public string Specialization { get; set; }
         public byte[] Photo { get; set; }

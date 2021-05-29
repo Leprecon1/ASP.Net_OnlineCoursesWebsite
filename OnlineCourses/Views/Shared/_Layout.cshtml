@@ -7,34 +7,29 @@
 
     <link rel="stylesheet" href="~/css/bootstrap.css">
 
-
     <link rel="stylesheet" href="~/css/flaticon.css">
     <link rel="stylesheet" href="~/css/themify-icons.css">
     <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="~/vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/google-translate.css" />
 
 </head>
 <body>
     <header class="header_area">
         <div class="main_menu">
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="" action="">
-                        <input type="text"
-                               class="form-control"
-                               id="search_input"
-                               placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="ti-close"
-                              id="close_search"
-                              title="Close Search"></span>
-                    </form>
-                </div>
-            </div>
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
+
+                    <a class="navbar-language" asp-controller="home" asp-action="Index">
+                        <img src="~/img/languages/lang__ru.png" alt="ru" data-google-lang="ru" class="language__img">
+                        <img src="~/img/languages/lang__en.png" alt="en" data-google-lang="en" class="language__img">
+                        <img src="~/img/languages/lang__de.png" alt="de" data-google-lang="de" class="language__img">
+                        <img src="~/img/languages/lang__fr.png" alt="fr" data-google-lang="fr" class="language__img">
+                        <img src="~/img/languages/lang__pt.png" alt="pt" data-google-lang="pt" class="language__img">
+                    </a>
+
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <a class="navbar-brand logo_h" asp-controller="home" asp-action="Index">
                         <img src="img/logo.png" alt="" />
@@ -55,38 +50,35 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item" @*class="nav-item active"*@>
 
-                                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">To home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="About">About us</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Events" asp-action="Index">Event</a>
+                                <a class="nav-link" asp-controller="Events" asp-action="Index">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a>
+                                <a class="nav-link" asp-controller="Contact" asp-action="Index">Contacts</a>
                             </li>
+
                             @*<li class="nav-item submenu dropdown">
-                                    <a href="#"
-                                       class="nav-link dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       role="button"
-                                       aria-haspopup="true"
-                                       aria-expanded="false">Event</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" ></a>
-                                        </li>
+                    <a href="#"
+                       class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">Event</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" ></a>
+                        </li>
 
-                                    </ul>
-                                </li>*@
+                    </ul>
+                </li>*@
 
-                            <li class="nav-item">
-                                <a href="#" class="nav-link search" id="search">
-                                    <i class="ti-search"></i>
-                                </a>
-                            </li>
+
                         </ul>
 
                         <ul class="nav nav-pills">
@@ -95,21 +87,34 @@
                                 @*<a class="nav-link" asp-controller="Account" asp-action="Logout">Sign out</a>*@
 
                             </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn-success btn-xs"
-                                        onclick="location.href='@Url.Action("Login", "Account")'">
-                                    Sign in
-                                </button>
 
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn-success btn-xs"
-                                        onclick="location.href='@Url.Action("Register", "Account")'">
-                                    Sign up
-                                </button>
+                            @if (User?.Identity != null && User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <p>User : @User.Identity.Name</p>
+                                    @*<button type="button" class="btn-success btn-xs"
+                                onclick="location.href='@Url.Action("Logout", "Account")'">
+                            Logout
+                        </button>*@
 
-                            </li>
+                                </li>
+                            }
+                            else
+                            {
+                        <li class="nav-item">
+                            <button type="button" class="btn-success btn-xs"
+                                    onclick="location.href='@Url.Action("Login", "Account")'">
+                                Sign in
+                            </button>
+                            <button type="button" class="btn-success btn-xs"
+                                    onclick="location.href='@Url.Action("Register", "Account")'">
+                                Registration
+                            </button>
+                        </li>
+        
+                            }
                         </ul>
+
 
 
                     </div>
@@ -118,6 +123,7 @@
         </div>
     </header>
 
+  
 
     @RenderBody()
     <br />
@@ -226,6 +232,13 @@
     <script src="~/js/gmaps.min.js"></script>
     <script src="~/js/contact.js"></script>
     <script src="~/js/theme.js"></script>
+
+    @*translate*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="~/js/google-translate.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

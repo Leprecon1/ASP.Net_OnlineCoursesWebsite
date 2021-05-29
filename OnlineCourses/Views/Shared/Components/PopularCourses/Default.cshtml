@@ -5,10 +5,10 @@
             <img class="img-fluid"  src="data:image/jpeg;base64,@(Convert.ToBase64String(group.Course.Image))" alt="" />
         </div>
         <div class="course_content">
-            <span class="price">$@group.Price</span>
+            <span class="price">💰 @group.Price</span>
             <span class="tag mb-4 d-inline-block">@group.Course.Category</span>
             <h4 class="mb-3">
-                <a asp-controller="Course" asp-action="CourseDetails" asp-route-id="@group.GroupId" >@group.Course.Name</a>
+                <a asp-controller="Course" asp-action="CourseDetails" asp-route-id="@group.Course.CourseId" >@group.Course.Name</a>
             </h4>
             <p>
                 @group.Course.ShortDescription
@@ -16,13 +16,13 @@
             <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                 <div class="authr_meta">
                     <img width="30" height="30" src="data:image/jpeg;base64,@(Convert.ToBase64String(group.Teacher.Photo))" alt="" />
-                    <span class="d-inline-block ml-2">@group.Teacher.Name</span>
+                    <span class="d-inline-block ml-2">@group.Teacher.TeacherName</span>
                 </div>
                 <div class="mt-lg-0 mt-3">
                     <span class="meta_info mr-4">
                         <a href="#"> <i class="ti-user mr-2"></i>25 </a>
                     </span>
-                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i> </a></span>
                 </div>
             </div>
         </div>

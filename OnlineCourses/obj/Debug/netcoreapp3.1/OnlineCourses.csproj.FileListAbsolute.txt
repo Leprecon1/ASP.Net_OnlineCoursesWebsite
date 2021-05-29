@@ -160,7 +160,6 @@ C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Raz
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\UpcomingEvents\Default.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Events\EventDetails.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EventDetails.cshtml.g.cs
-C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LastUpcomingEvents\Default.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\OnlineCourses.StaticWebAssets.xml
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -173,9 +172,6 @@ C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\Mic
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.csproj.CoreCompileInputs.cache
-C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
@@ -187,3 +183,16 @@ C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Raz
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Roles\UserList.cshtml.g.cs
 C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Users\ChangePassword.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AllCourses.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Course\Search.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Course\CoursePayment.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CoursePaymentDetails.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HP\source\repos\OnlineCourses\OnlineCourses\obj\Debug\netcoreapp3.1\OnlineCourses.MvcApplicationPartsAssemblyInfo.cache

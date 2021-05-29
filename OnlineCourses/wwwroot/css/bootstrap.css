@@ -4210,6 +4210,22 @@ input[type=submit].btn-block {
     text-decoration: none
 }
 
+.navbar-language {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 10rem;
+    font-size: 3rem;
+    line-height: inherit;
+    white-space: nowrap
+}
+
+    .navbar-language:focus,
+    .navbar-language:hover {
+        text-decoration: none
+    }
+
+
 .navbar-nav {
     display: -ms-flexbox;
     display: flex;

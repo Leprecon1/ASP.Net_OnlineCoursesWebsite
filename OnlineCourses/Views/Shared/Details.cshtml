@@ -28,53 +28,53 @@
                   <img class="img-fluid"width="600" src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Course.Image))" alt="">
               </div>
               <div class="content_wrapper">
-                 
+
                   <div class="content">
                       @Html.Raw(@Model.Course.MainDescription)
                   </div>
+                  <h4 class="title"></h4>
+                  @*
+        <div class="content">
+            <ul class="course_list">
+                <li class="justify-content-between d-flex">
+                    <p>Introduction Lesson</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Basics of HTML</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Getting Know about HTML</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Tags and Attributes</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Basics of CSS</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Getting Familiar with CSS</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Introduction to Bootstrap</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Responsive Design</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
+                <li class="justify-content-between d-flex">
+                    <p>Canvas in HTML 5</p>
+                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                </li>
 
-                  <h4 class="title">Course Outline</h4>
-                  <div class="content">
-                      <ul class="course_list">
-                          <li class="justify-content-between d-flex">
-                              <p>Introduction Lesson</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Basics of HTML</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Getting Know about HTML</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Tags and Attributes</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Basics of CSS</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Getting Familiar with CSS</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Introduction to Bootstrap</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Responsive Design</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-                          <li class="justify-content-between d-flex">
-                              <p>Canvas in HTML 5</p>
-                              <a class="primary-btn text-uppercase" href="#">View Details</a>
-                          </li>
-
-                      </ul>
-                  </div>
+            </ul>
+        </div>*@
               </div>
           </div>
 
@@ -84,13 +84,13 @@
                   <li>
                       <a class="justify-content-between d-flex" href="#">
                           <p>Trainer’s Name</p>
-                          <span class="or">@Model.Teacher.Name</span>
+                          <span class="or">@Model.Teacher.TeacherName</span>
                       </a>
                   </li>
                   <li>
                       <a class="justify-content-between d-flex" href="#">
                           <p>Course Fee </p>
-                          <span>$@Model.Price</span>
+                          <span>💰@Model.Price</span>
                       </a>
                   </li>
                   <li>
@@ -106,7 +106,8 @@
                       </a>
                   </li>
               </ul>
-              <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll the course</a>
+              <a asp-controller="Course" asp-action="CoursePayment"
+                 asp-route-id="@Model.Course.CourseId" class="primary-btn2 text-uppercase enroll rounded-0 text-white">purchase the course</a>
 
               <h4 class="title">Reviews</h4>
               <div class="content">
@@ -148,13 +149,13 @@
                           </div>
                       </div>
                   </div>
-                  <div class="feedeback">
+                  @*<div class="feedeback">
                       <h6>Your Feedback</h6>
                       <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
                       <div class="mt-10 text-right">
                           <a href="#" class="primary-btn2 text-right rounded-0 text-white">Submit</a>
                       </div>
-                  </div>
+                  </div>*@
                   <div class="comments-area mb-30">
                       <div class="comment-list">
                           <div class="single-comment single-reviews justify-content-between d-flex">
@@ -174,8 +175,7 @@
                                           </div>
                                       </h5>
                                       <p class="comment">
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                          eiusmod tempor incididunt ut labore et dolore.
+                                          These are the best I've found on the internet. Continue in the same spirit!
                                       </p>
                                   </div>
                               </div>
@@ -199,8 +199,8 @@
                                           </div>
                                       </h5>
                                       <p class="comment">
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                          eiusmod tempor incididunt ut labore et dolore.
+                                          I bought a course in C ++, while I was halfway through, but I am already very satisfied.
+                                          Very interesting presentation of the material.
                                       </p>
                                   </div>
                               </div>
@@ -224,8 +224,9 @@
                                           </div>
                                       </h5>
                                       <p class="comment">
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                          eiusmod tempor incididunt ut labore et dolore.
+                                          Fantastic teachers and courses.
+                                          I like the speed and clear communication of your instructions!
+                                          it was a great experience.
                                       </p>
                                   </div>
                               </div>

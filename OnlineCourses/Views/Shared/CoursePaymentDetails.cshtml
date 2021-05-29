@@ -1,0 +1,438 @@
+﻿<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%; /* IE10 */
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%; /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%; /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#submit').click(function () {
+                /* when the submit button in the modal is clicked, submit the form */
+                //alert('submitting');
+                //$('#formfield').submit();
+                window.location.href = "https://www.google.com/";
+            });
+        });
+    </script>
+</head>
+
+<!--================ Start Course Details Area =================-->
+<section class="course_details_area section_gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 course_details_left">
+                <div class="main_image">
+                    <img class="img-fluid" width="600" src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Course.Image))" alt="">
+                </div>
+                <div class="content_wrapper">
+
+                    <div class="content">
+                        <h2>Buy our best courses</h2>
+                        <p>
+                            Top instructors from around the world teach millions of students .
+                            We provide the tools and skills to teach what you love.
+                        </p>
+
+
+
+                        <div id="modDialog" class="modal fade">
+                            @*modal view*@
+                            <div id="dialogContent" class="modal-dialog"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-75">
+                                <div class="container">
+                                    <form action="/action_page.php">
+
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <h3>Billing Address</h3>
+                                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                                <input type="text" id="email" name="email" placeholder="john@example.com">
+                                                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                                <label for="city"><i class="fa fa-institution"></i> City</label>
+                                                <input type="text" id="city" name="city" placeholder="New York">
+
+                                                <div class="row">
+                                                    <div class="col-50">
+                                                        <label for="state">District</label>
+                                                        <input type="text" id="state" name="state" placeholder="NY">
+                                                    </div>
+                                                    <div class="col-50">
+                                                        <label for="zip">Zip</label>
+                                                        <input type="text" id="zip" name="zip" placeholder="10001">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-50">
+                                                <h3>Payment</h3>
+                                                <label for="fname">Accepted Cards</label>
+                                                <div class="icon-container">
+                                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                                </div>
+                                                <label for="cname">Name on Card</label>
+                                                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                                <label for="ccnum">Credit card number</label>
+                                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                                <label for="expmonth">Exp Month</label>
+                                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                                <div class="row">
+                                                    <div class="col-50">
+                                                        <label for="expyear">Exp Year</label>
+                                                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                                    </div>
+                                                    <div class="col-50">
+                                                        <label for="cvv">CVV</label>
+                                                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                                        </label>
+
+                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Continue to checkout</button>
+                                        <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Purchase completed!</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Congratulations on purchasing our course. Our specialist will contact you shortly.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+
+                                                        <button  type="button" class="btn btn-default" data-dismiss="modal">Go back</button>
+                                                        <a asp-controller="Home" asp-action="Index"  class="btn btn-success success">OK</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            @*<div class="col-25">
+                                  <div class="container">
+                                    <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+                                    <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+                                    <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                                    <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                                    <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                                    <hr>
+                                    <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                                  </div>
+                                </div>*@
+                        </div>
+                    </div>
+                    <h4 class="title"></h4>
+                    @*
+                        <div class="content">
+                            <ul class="course_list">
+                                <li class="justify-content-between d-flex">
+                                    <p>Introduction Lesson</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Basics of HTML</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Getting Know about HTML</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Tags and Attributes</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Basics of CSS</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Getting Familiar with CSS</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Introduction to Bootstrap</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Responsive Design</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+                                <li class="justify-content-between d-flex">
+                                    <p>Canvas in HTML 5</p>
+                                    <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                </li>
+
+                            </ul>
+                        </div>*@
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 right-contents">
+                <ul>
+                    <li>
+                        <a class="justify-content-between d-flex" href="#">
+                            <p>Trainer’s Name</p>
+                            <span class="or">@Model.Teacher.TeacherName</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="justify-content-between d-flex" href="#">
+                            <p>Course Fee </p>
+                            <span>$@Model.Price</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="justify-content-between d-flex" href="#">
+                            <p>Pereodicity</p>
+                            <span>@Model.Periodicity</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="justify-content-between d-flex" href="#">
+                            <p>Date start </p>
+                            <span>@Model.Date.ToLongDateString()</span>
+                        </a>
+                    </li>
+                </ul>
+                <a asp-controller="Course" asp-action="CourseDetails"
+                   asp-route-id="@Model.Course.CourseId" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Back</a>
+
+                <h4 class="title">Reviews</h4>
+                <div class="content">
+                    <div class="review-top row pt-40">
+                        <div class="col-lg-12">
+                            <h6 class="mb-15">Provide Your Rating</h6>
+                            <div class="d-flex flex-row reviews justify-content-between">
+                                <span>Quality</span>
+                                <div class="star">
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star"></i>
+                                    <i class="ti-star"></i>
+                                </div>
+                                <span>Outstanding</span>
+                            </div>
+                            <div class="d-flex flex-row reviews justify-content-between">
+                                <span>Puncuality</span>
+                                <div class="star">
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star"></i>
+                                    <i class="ti-star"></i>
+                                </div>
+                                <span>Outstanding</span>
+                            </div>
+                            <div class="d-flex flex-row reviews justify-content-between">
+                                <span>Quality</span>
+                                <div class="star">
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star checked"></i>
+                                    <i class="ti-star"></i>
+                                    <i class="ti-star"></i>
+                                </div>
+                                <span>Outstanding</span>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="feedeback">
+                            <h6>Your Feedback</h6>
+                            <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
+                            <div class="mt-10 text-right">
+                                <a href="#" class="primary-btn2 text-right rounded-0 text-white">Submit</a>
+                            </div>
+                        </div>*@
+                    <div class="comments-area mb-30">
+                        <div class="comment-list">
+                            <div class="single-comment single-reviews justify-content-between d-flex">
+                                <div class="user justify-content-between d-flex">
+                                    <div class="thumb">
+                                        <img src="~/img/blog/c1.jpg" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <h5>
+                                            <a href="#">Emilly Blunt</a>
+                                            <div class="star">
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star"></span>
+                                                <span class="ti-star"></span>
+                                            </div>
+                                        </h5>
+                                        <p class="comment">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-list">
+                            <div class="single-comment single-reviews justify-content-between d-flex">
+                                <div class="user justify-content-between d-flex">
+                                    <div class="thumb">
+                                        <img src="~/img/blog/c2.jpg" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <h5>
+                                            <a href="#">Elsie Cunningham</a>
+                                            <div class="star">
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star"></span>
+                                                <span class="ti-star"></span>
+                                            </div>
+                                        </h5>
+                                        <p class="comment">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-list">
+                            <div class="single-comment single-reviews justify-content-between d-flex">
+                                <div class="user justify-content-between d-flex">
+                                    <div class="thumb">
+                                        <img src="~/img/blog/c3.jpg" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <h5>
+                                            <a href="#">Maria Luna</a>
+                                            <div class="star">
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star checked"></span>
+                                                <span class="ti-star"></span>
+                                                <span class="ti-star"></span>
+                                            </div>
+                                        </h5>
+                                        <p class="comment">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ End Course Details Area =================-->

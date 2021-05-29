@@ -1,0 +1,190 @@
+﻿
+<!--================Blog Area =================-->
+<section class="blog_area section_gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog_left_sidebar">
+
+                    @foreach (var groups in Model.AllGroups)
+                    {
+                        <partial name="_AllCourses" model="groups" />
+                    }
+
+                    @*<nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Previous">
+                                    <span aria-hidden="true">
+                                        <i class="ti-angle-left"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a href="#" class="page-link">01</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">02</a></li>
+                            <li class="page-item"><a href="#" class="page-link">03</a></li>
+                            <li class="page-item"><a href="#" class="page-link">04</a></li>
+                            <li class="page-item"><a href="#" class="page-link">09</a></li>
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Next">
+                                    <span aria-hidden="true">
+                                        <i class="ti-angle-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>*@
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        @using (Html.BeginForm("Search", "Course", FormMethod.Post))
+                        {
+                            <div class="input-group">
+                                <input type="text" name="courseName" class="form-control" placeholder="Search Courses">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button"><i class="ti-search"></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+
+                    <div class="form-group">
+                        <br />
+                        <label>Цена</label>
+                        <input class="form-control" type="number" name="minPrice" placeholder="от">
+                        <input class="form-control" type="number" name="maxPrice" placeholder="до">
+                    </div>
+                            <div class="form-group">
+                                <label>Количество часов</label>
+                                <input class="form-control" type="number" name="minHours" placeholder="от">
+                                <input class="form-control" type="number" name="maxHours" placeholder="до">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="isDate" value="true" class="form-check-input">
+                                <label class="form-check-label">Новые курсы</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">применить</button>
+
+                        }
+                        <div class="br"></div>
+                    </aside>
+
+                    @*<aside>
+                            <form>
+                                <div class="form-group">
+                                    <label>Цена</label>
+                                    <input class="form-control" placeholder="от">
+                                    <input class="form-control" placeholder="до">
+                                </div>
+                                <div class="form-group">
+                                    <label>Количество часов</label>
+                                    <input class="form-control" placeholder="от">
+                                    <input class="form-control" placeholder="до">
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label">Новые курсы</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">применить</button>
+
+                            </form>
+                            <div class="br"></div>
+
+                        </aside>*@
+
+                    <aside class="single_sidebar_widget post_category_widget">
+
+                        <ul class="list cat-list">
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="Design" class="d-flex justify-content-between">
+                                    <p>Design</p>
+                                    <p>2</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="Programming" class="d-flex justify-content-between">
+                                    <p>Programming</p>
+                                    <p>2</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="English" class="d-flex justify-content-between">
+                                    <p>English</p>
+                                    <p>2</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="Game" class="d-flex justify-content-between">
+                                    <p>Game</p>
+                                    <p>2</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   class="d-flex justify-content-between">
+                                    <p>All courses</p>
+                                    <p></p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="br"></div>
+                    </aside>
+
+                    <aside class="single_sidebar_widget ads_widget">
+                        <a href="#"><img class="img-fluid" src="~/img/blog/add.jpg" alt=""></a>
+                        <div class="br"></div>
+                    </aside>
+
+                    <aside class="single-sidebar-widget newsletter_widget">
+                        <h4 class="widget_title">Newsletter</h4>
+                        <p>
+                            Here, you can subscribe to news on our website and receive the latest alerts.
+                        </p>
+
+                        @using (Html.BeginForm("SubcribeCourse", "Contact", FormMethod.Post))
+                        {
+                            <div class="form-group d-flex flex-row">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="ti-email" aria-hidden="true"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" name="email" placeholder="Enter email"
+                                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
+                                </div>
+                                <button type="submit" class="bbtns">Subcribe</button>
+                            </div>
+                        }
+                        <p class="text-bottom">You can unsubscribe at any time</p>
+                        <div class="br"></div>
+                    </aside>
+                    <aside class="single-sidebar-widget tag_cloud_widget">
+                        <h4 class="widget_title">Tag Clouds</h4>
+                        <ul class="list">
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="Design">Design</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="Programming">Programming</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="English">English</a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="Course" asp-action="index"
+                                   asp-route-category="Game">Game</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

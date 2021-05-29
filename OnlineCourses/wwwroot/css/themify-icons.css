@@ -209,6 +209,11 @@
 .ti-eye:before {
 	content: "\e63d";
 }
+
+.ti-price:before {
+	content: "\1F4B0";
+}
+
 .ti-export:before {
 	content: "\e63e";
 }

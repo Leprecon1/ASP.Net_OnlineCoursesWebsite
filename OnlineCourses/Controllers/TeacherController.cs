@@ -30,7 +30,7 @@ namespace OnlineCourses.Controllers
             Teacher teacher =
                 new Teacher
                 {
-                    Name = tvm.Name,
+                    TeacherName = tvm.TeacherName,
                     About = tvm.About,
                     Specialization = tvm.Specialization,
                     

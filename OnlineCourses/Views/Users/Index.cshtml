@@ -2,7 +2,9 @@
 @{
     ViewBag.Title = "Список пользователей";
 }
-
+<br />
+<br />
+<br />
 <table class="table">
     <tr><th>Email</th><th>Год</th><th></th></tr>
     @foreach (var user in Model)
@@ -23,4 +25,4 @@
     }
 </table>
 
-<a class="nav-link" asp-action="Create" asp-controller="Users" >Добавить пользователя</a>
+<a class="nav-link" asp-action="Create" asp-controller="Users">Добавить пользователя</a>
